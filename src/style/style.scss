@@ -1,0 +1,25 @@
+.site {
+  opacity: 0;
+
+  &[uiState="show"] {
+    opacity: 1;
+  }
+
+  &[uiState="hidden"] {
+    display: none;
+  }
+}
+
+.svg-screen {
+	.svg {
+		background-color: #7ED321;
+		width: 100%;
+		text-align: center;
+
+		svg {
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1200px;
+		}
+	}
+}
