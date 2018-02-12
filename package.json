@@ -37,9 +37,11 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "popper.js": "^1.12.9",
     "skrollr": "^0.6.26",
     "skrollr-menu": "^1.0.3",
+    "skrollr-stylesheets": "^1.0.0",
     "svg-inline-loader": "^0.8.0",
     "webfontloader": "^1.6.28"
   }
