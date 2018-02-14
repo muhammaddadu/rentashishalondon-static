@@ -1,25 +1,131 @@
-.site {
-  opacity: 0;
+$header-profile-picture-width: 78px;
 
-  &[uiState="show"] {
-    opacity: 1;
-  }
-
-  &[uiState="hidden"] {
-    display: none;
-  }
+.site-text-h1 {
+	font-size: 18px;
 }
 
-.svg-screen {
-	.svg {
-		background-color: #7ED321;
-		width: 100%;
-		text-align: center;
+.site-text-h2 {
+	font-size: 16px;
+	color: rgba(white, 0.8);
+}
 
-		svg {
-			margin: 0 auto;
-			width: 100%;
-			max-width: 1200px;
+.p-full-centered {
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.page-background--colorblur {
+	background-color: $color-dark;
+	background-image: $profile-page-bg;
+	background-position: right bottom;
+	background-size: cover;
+
+}
+
+.cmp-profile-header {
+	text-align: left;
+	@extend .d-flex;
+	@extend .justify-content-center;
+	@extend .align-self-center;
+
+	.profile-picture {
+		width: $header-profile-picture-width;
+		height: $header-profile-picture-width;
+		border-radius: $header-profile-picture-width/2;
+		background-color: rgba(white, 0.9);
+	}
+
+	.cmp-info-container {
+		margin-left: 19px;
+		color: white;
+		@extend .align-self-center;
+	}
+}
+
+.list-links {
+	background-color: rgba(black, 0.7);
+	max-width: 280px;
+	width: 100%;
+	padding: 0;
+	border-radius: 12px;
+	margin: 24px 0 12px;
+}
+
+.list-item {
+	list-style: none;
+	width: 100%;
+	margin: 0;
+	border-bottom: 1px solid rgba(white, 0.2);
+
+	&:first-child {
+		.list-item-link {
+			border-radius: 12px;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
 		}
+	}
+
+	&:last-child {
+		border-bottom: 0;
+
+		.list-item-link {
+			border-radius: 12px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+	}
+}
+
+.list-item-link {
+	@extend .d-flex;
+	@extend .justify-content-center;
+	@extend .align-self-center;
+	color: rgba(white, 0.8);
+	padding: 16px;
+	transition: ease 200ms all;
+
+	&:active {
+		text-decoration: none;
+		color: white;
+		background-color: rgba(black, 0.4);
+		opacity: 2;
+	}
+
+	&:hover {
+		text-decoration: none;
+		color: white;
+		opacity: 0.7;
+
+		.fa-chevron-right {
+            animation-duration: 400ms;
+			animation-name: slidein;
+		}
+	}
+
+	.fa {
+		font-size: 28px;
+	}
+
+	.list-item-text {
+		flex-grow: 1;
+		margin-left: 18px;
+		line-height: 28px;
+	}
+}
+
+@keyframes slidein {
+	0% {
+		margin-right: 0px;
+	}
+	50% {
+		margin-right: 10px;
+	}
+
+	100% {
+		margin-right: 0px;
 	}
 }

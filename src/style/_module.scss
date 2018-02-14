@@ -1,8 +1,9 @@
 $icon-font-path: "~bootstrap/assets/fonts/bootstrap/";
+$fa-font-path: "~font-awesome/fonts";
 
 @import '~normalize.css';
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/scss/font-awesome.scss';
 @import 'fonts';
-@import 'skrollr';
 @import 'style';
