@@ -1,4 +1,5 @@
 import './style/_module.scss';
+import 'particles.js';
 
 const DEBOUNCE_MS = 200;
 const SETVIEWPORTHEIGHT_SELECTOR = 'js-setviewportsize';
@@ -6,12 +7,16 @@ const SETVIEWPORTHEIGHT_SELECTOR = 'js-setviewportsize';
 class App {
     constructor() {
         this._cache = {};
-        this.loadActions();
+        this.initialize();
     }
 
-    loadActions() {
+    initialize() {
         window.addEventListener('resize', () => this.onResize());
         this.onResize();
+
+        particlesJS.load('particles-js', 'assets/particles.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
     }
 
     onResize() {
