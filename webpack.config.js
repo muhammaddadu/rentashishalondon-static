@@ -7,31 +7,9 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-class SkrollrStylesheetsPlugin {
-    constructor(options) {}
-
-    apply(compiler) {
-        this.compiler = compiler;
-        compiler.plugin('compilation', (compilation) => this.onCompilation(compilation));
-    }
-
-    onCompilation(compilation) {
-        compilation.plugin('html-webpack-plugin-after-html-processing', this.onAfterHtmlProcessing);
-    }
-
-    onAfterHtmlProcessing(htmlPluginData, callback) {
-        let html = htmlPluginData.html;
-
-        html = html.replace(/(link.*href="app\.bundle\.css")/g, '$1 data-skrollr-stylesheet');
-        htmlPluginData.html = html;
-        callback(null, htmlPluginData);
-    }
-}
-
 module.exports = {
     entry: {
-        app: './src/app.js',
-        // vendors: ['bootstrap', 'popper.js', 'jquery']
+        app: './src/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -89,17 +67,10 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin('[name].bundle.css'),
-        new SkrollrStylesheetsPlugin({options: ''}),
         new HtmlWebpackPlugin({
             template: 'src/index.hbs',
             inject: 'body',
             xhtml: true
-        }),
-        new webpack.ProvidePlugin({
-            Popper: "popper.js",
-            $: "jquery",
-            jQuery: "jquery",
-            skrollr: "skrollr"
         }),
         new CopyWebpackPlugin([{
             from: 'src/assets',
