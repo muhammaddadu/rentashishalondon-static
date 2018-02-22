@@ -36,10 +36,10 @@ class App {
     }
 
     setViewportSize($el) {
-        let elements = document.querySelector(`.${SETVIEWPORTHEIGHT_SELECTOR}`);
+        let elements = document.querySelectorAll(`.${SETVIEWPORTHEIGHT_SELECTOR}`);
         let viewportSize = this.getViewportInformation();
 
-        elements.setAttribute('style', `max-width: ${viewportSize.width}px; max-height: ${viewportSize.height}px`);
+        elements.forEach((el) => el.setAttribute('style', `max-width: ${viewportSize.width}px; max-height: ${viewportSize.height}px`));
     }
 }
 
