@@ -1,4 +1,4 @@
-$header-profile-picture-width: 78px;
+$header-profile-picture-width: 120px;
 
 .site-text-h1 {
 	font-size: 26px;
@@ -42,7 +42,7 @@ $header-profile-picture-width: 78px;
 	$color3: rgb(20, 130, 173);
 
 
-	background: linear-gradient(-45deg, $color3 40%, $color1);
+	background: #000000;
 	background-repeat: no-repeat;
 
 	@include media-breakpoint-up(md) {
@@ -69,6 +69,7 @@ $header-profile-picture-width: 78px;
 	.cmp-info-container {
 		color: white;
 		text-align: center;
+		display: none;
 	}
 
 	@include media-breakpoint-up(md) {
@@ -80,17 +81,18 @@ $header-profile-picture-width: 78px;
 
 		.cmp-info-container {
 			margin-left: 19px;
-			display: flex;
+			// display: flex;
 			flex-direction: column;
 			align-items: center;
 			text-align: left;
 			align-self: center;
+			display: none;
 		}
 	}
 }
 
 .list-links {
-	background-color: rgba(black, 0.7);
+	background-color: #625325;
 	max-width: 280px;
 	width: 100%;
 	padding: 0;
