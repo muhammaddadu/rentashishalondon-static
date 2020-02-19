@@ -37,18 +37,7 @@ $header-profile-picture-width: 120px;
 }
 
 .page-background--colorblurcss {
-	$color1: rgb(181, 184, 28);
-	$color2: rgb(179, 121, 14);
-	$color3: rgb(20, 130, 173);
-
-
 	background: #000000;
-	background-repeat: no-repeat;
-
-	@include media-breakpoint-up(md) {
-		background: linear-gradient(-45deg, $color3 40%, $color2, $color1);
-		background-repeat: no-repeat;
-	}
 }
 
 .cmp-profile-header {
